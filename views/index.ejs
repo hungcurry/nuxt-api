@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+
+    <button class="btn">按我</button>
+    <script type="module">
+      import axios from 'https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.3/esm/axios.js'
+      let ary = [];
+      axios.get("http://127.0.0.1:3000/api/banners")
+      .then((res) =>{
+        ary = res.data.data;
+        console.log(ary);
+      })
+
+      const el = document.querySelector('.btn');
+      el.addEventListener('click',editFn);
+      
+      function editFn(){
+        let obj = {
+        "backgroundImage": "url(https://i.imgur.com/obLCUJo.jpg)",
+        "animationDuration": "10s"
+        }
+        axios.post("http://127.0.0.1:3000/api/banners" , obj )
+        .then((res) =>{
+          console.log(res.data.data);
+        })
+      };
+    </script>
+  </body>
+</html>
