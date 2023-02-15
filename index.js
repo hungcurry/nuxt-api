@@ -12,6 +12,20 @@ var apiRouter = require('./routes/api');
 
 var app = express();
 
+// 跨網域
+const corsOptions = {
+  // 設置可存取的網域
+  origin: "*",
+  // origin: [
+  //   'http://www.example.com',
+  //   'http://localhost:8080',
+  // ],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+app.use(cors(corsOptions));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -47,7 +61,5 @@ app.use(function(err, req, res, next) {
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
-// 跨網域
-app.use(cors());
 
 module.exports = app;
