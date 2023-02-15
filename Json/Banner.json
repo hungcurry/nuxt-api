@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "backgroundImage": "url(https://i.imgur.com/B2DoHlW.jpg)",
+    "backgroundImage": "url(https://picsum.photos/500/300?random=1)",
     "animationDuration": "10s"
     
   },
   {
     "id": 2,
-    "backgroundImage": "url(https://i.imgur.com/NkyfUOw.jpg)",
+    "backgroundImage": "url(https://picsum.photos/500/300?random=2)",
     "animationDuration": "10s",
     "quantity" : 10
   },
   {
     "id": 3,
-    "backgroundImage": "url(https://i.imgur.com/aL9gdMf.jpg)",
+    "backgroundImage": "url(https://picsum.photos/500/300?random=3)",
     "animationDuration": "10s"
   },
   {
     "id": 4,
-    "backgroundImage": "url(https://i.imgur.com/Ey3FAy3.jpg)",
+    "backgroundImage": "url(https://picsum.photos/500/300?random=4)",
     "animationDuration": "10s"
   },
   {
     "id": 5,
-    "backgroundImage": "url(https://i.imgur.com/obLCUJo.jpg)",
+    "backgroundImage": "url(https://picsum.photos/500/300?random=5)",
     "animationDuration": "10s"
   }
 ]
