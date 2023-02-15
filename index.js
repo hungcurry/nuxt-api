@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require("cors");
 
 // 配置API
 var indexRouter = require('./routes/index');
@@ -46,5 +47,7 @@ app.use(function(err, req, res, next) {
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
+// 跨網域
+app.use(cors());
 
 module.exports = app;
