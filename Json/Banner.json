@@ -8,8 +8,7 @@
   {
     "id": 2,
     "backgroundImage": "url(https://i.imgur.com/NkyfUOw.jpg)",
-    "animationDuration": "10s",
-    "quantity" : 10
+    "animationDuration": "10s"
   },
   {
     "id": 3,
