@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
 // 配置API
 var indexRouter = require('./routes/index');
@@ -12,6 +13,9 @@ var apiRouter = require('./routes/api');
 
 var app = express();
 
+// Json Parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true, limit: "200kb" }));
 // 跨網域
 const corsOptions = {
   // 設置可存取的網域
