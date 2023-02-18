@@ -66,7 +66,7 @@ router.patch('/carts', function(req, res, next) {
 // ... delete ...
 // ===================
 // http://127.0.0.1:5000/api/banners/:id
-router.delete('/carts/:id', function(req, res, next) {
+router.delete('/carts/delete/:id', function(req, res, next) {
   const id = req.params.id;
   console.log(`id` , id);
   CartData.forEach((cart , key)=> {
@@ -81,7 +81,7 @@ router.delete('/carts/:id', function(req, res, next) {
   })
   res.end();
 });
-router.delete('/carts', function(req, res, next) {
+router.delete('/carts/delete', function(req, res, next) {
   CartData.length = 0;
   res.status(200);
   res.send({
