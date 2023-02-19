@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 const KvData = require("../Json/Banner.json");
 const CartData = require("../Json/Cart.json");
-// ============================= KvData ===================================
+const ProductData = require("../Json/Product.json");
+const ProductDetailData = require("../Json/ProductDetail.json");
+const SwiperData = require("../Json/Swiper.json");
+// ============================= KvData ========================================
 // ... get ...
 // ===================
 // http://127.0.0.1:5000/api/banners
@@ -14,9 +17,40 @@ router.get('/banners', function(req, res, next) {
   })
   res.end();
 });
-
-
-// ============================= CartData ===================================
+// ============================= ProductData ===================================
+// ... get ...
+// ===================
+router.get('/products', function(req, res, next) {
+  res.status(200);
+  res.send({
+    success : true,
+    data :ProductData,
+  })
+  res.end();
+});
+// ============================= ProductDetailData =============================
+// ... get ...
+// ===================
+router.get('/detail-product', function(req, res, next) {
+  res.status(200);
+  res.send({
+    success : true,
+    data :ProductDetailData,
+  })
+  res.end();
+});
+// ============================= ProductDetailData =============================
+// ... get ...
+// ===================
+router.get('/swiper', function(req, res, next) {
+  res.status(200);
+  res.send({
+    success : true,
+    data :SwiperData,
+  })
+  res.end();
+});
+// ============================= CartData ======================================
 // ... get ...
 // ===================
 // http://127.0.0.1:5000/api/carts
