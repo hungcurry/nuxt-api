@@ -5,6 +5,7 @@ const CartData = require("../Json/Cart.json");
 const ProductData = require("../Json/Product.json");
 const ProductDetailData = require("../Json/ProductDetail.json");
 const SwiperData = require("../Json/Swiper.json");
+const CatData = require("../Json/Cats.json");
 // ============================= KvData ========================================
 // ... get ...
 // ===================
@@ -47,6 +48,17 @@ router.get('/swiper', function(req, res, next) {
   res.send({
     success : true,
     data :SwiperData,
+  })
+  res.end();
+});
+// ============================= ProductDetailData =============================
+// ... get ...
+// ===================
+router.get('/cats', function(req, res, next) {
+  res.status(200);
+  res.send({
+    success : true,
+    data :CatData,
   })
   res.end();
 });
