@@ -79,29 +79,27 @@ router.get('/carts', function(req, res, next) {
 router.post('/carts', function(req, res, next) {
   const cart = req.body;
   const idAry = [];
-  if (CartData.length >= 1) {
-    CartData.forEach(function (item) {
-      idAry.push(Number(item.id));
-    });
-    const isKey = idAry.includes(Number(cart.id));
-    if(!isKey) {
-      console.log(`新增`);
-      CartData.push({
-        orderId: '2PpFq' + Date.now(),
-        ...cart,
-      })
-      res.status(200);
-      res.send({
-        success : true,
-        data :CartData,
-      })
-    }else {
-      let content ="產品 已經在購物車內";
-      res.status(403);
-      res.send({
-        data :content,
-      })
-    }
+  CartData.forEach(function (item) {
+    idAry.push(Number(item.id));
+  });
+  const isKey = idAry.includes(Number(cart.id));
+  if(!isKey) {
+    console.log(`新增`);
+    CartData.push({
+      orderId: '2PpFq' + Date.now(),
+      ...cart,
+    })
+    res.status(200);
+    res.send({
+      success : true,
+      data :CartData,
+    })
+  }else {
+    let content ="產品 已經在購物車內";
+    res.status(403);
+    res.send({
+      data :content,
+    })
   }
   res.end();
 });
