@@ -6,11 +6,16 @@ const ProductData = require("../Json/Product.json");
 const ProductDetailData = require("../Json/ProductDetail.json");
 const SwiperData = require("../Json/Swiper.json");
 const CatData = require("../Json/Cats.json");
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
 // ============================= KvData ========================================
 // ... get ...
 // ===================
 // http://127.0.0.1:5000/api/banners
-router.get('/banners', function(req, res, next) {
+router.get('/carousel', function(req, res, next) {
   res.status(200);
   res.send({
     success : true,
