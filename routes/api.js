@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const KvData = require("../Json/Banner.json");
+const KvData = require("../Json/Carousel.json");
 const CartData = require("../Json/Cart.json");
 const ProductData = require("../Json/Product.json");
 const ProductDetailData = require("../Json/ProductDetail.json");
